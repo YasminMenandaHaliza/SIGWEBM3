@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fungsi Faktorial</title>
+</head>
+<body>
+    <h1>Hitung Faktorial dari Input</h1>
+    <p>Masukkan sembarang angka</p>
+    <input type="number" id="angkainput" />
+    <button onclick="hitung()">click</button>
+    <p id="hasilFaktorial"></p>
+
+    <script>
+        function hitung() {
+            var angkainput = document.getElementById("angkainput").value;
+            var hasil = faktorial(angkainput);
+            document.getElementById("hasilFaktorial").innerHTML = "Angka faktorial dari " + angkainput + " adalah: " + hasil;
+        }
+
+        function faktorial(n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            } else {
+                return n * faktorial(n - 1);
+            }
+        }
+    </script>
+</body>
+</html>

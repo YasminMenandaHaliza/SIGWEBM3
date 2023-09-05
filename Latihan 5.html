@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bilangan Fibonacci</title>
+</head>
+<body>
+
+    <h1>Bilangan Fibbonaci</h1>
+    <p>Masukkan angka untuk mengetahui bilangan fibbonacinya : </p>
+	<input type text="text" id="angkaInput" />
+    <button onclick="fibonacci(angkaInput.value)">Hitung</button>
+
+
+<p id="hasil"></p>
+
+
+<script>
+var fibonacci = function (n) 
+{
+  if (n==1) {
+    var loop = [0, 1];
+    return loop;
+  } 
+
+  else {
+    var s = fibonacci(n - 1);
+    s.push(s[s.length - 1] + s[s.length - 2]);
+    document.getElementById("hasil").innerHTML =s;
+    return s;
+  }
+   
+};
+</script>
+
+</body>
+</html>

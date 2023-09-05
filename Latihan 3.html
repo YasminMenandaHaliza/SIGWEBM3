@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validasi Nama dan Umur</title>
+</head>
+<body>
+    <h1>Validasi Nama dan Umur</h1>
+    <p>Masukkan nama:</p>
+    <input type="text" id="namaInput" />
+    <p>Masukkan umur:</p>
+    <input type="number" id="umurInput" />
+    <button onclick="validasiData()">Validasi</button>
+    <p id="errorText" style="color: red;"></p>
+    <p id="hasilText"></p>
+
+    <script>
+        function validasiData() {
+            var nama = document.getElementById("namaInput").value;
+            var umur = parseInt(document.getElementById("umurInput").value);
+
+            var errorText = document.getElementById("errorText");
+            var hasilText = document.getElementById("hasilText");
+
+            // Validasi nama
+            if (nama === "") {
+                errorText.innerHTML = "Isikan nama!!";
+                hasilText.innerHTML = ""
+				alert("Isikan nama!!");
+                return;
+            } else {
+                errorText.innerHTML = "";
+            }
+
+            // Validasi umur
+            if (umur < 0) {
+                hasilText.innerHTML = "Anda Game Over";
+				alert("Anda Game Over");
+            } else if (umur < 5) {
+                hasilText.innerHTML = "Anda masih bayi";
+				alert("Anda masih bayi");
+            } else if (umur >= 6 && umur <= 15) {
+                hasilText.innerHTML = "Anda masih anak-anak";
+				alert("Anda masih anak-anak");
+            } else if (umur >= 16 && umur <= 30) {
+                hasilText.innerHTML = "Anda masih remaja";
+				alert("Anda masih remaja");
+            } else if (umur >= 31 && umur <= 60) {
+                hasilText.innerHTML = "Anda sudah dewasa";
+				alert("Anda sudah dewasa");
+            } else {
+                hasilText.innerHTML = "Anda sudah dewasa";
+				alert("Anda sudah dewasa");
+            }
+        }
+    </script>
+</body>
+</html>
